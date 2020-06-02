@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{% static 'regstyle.css' %}">
+    <title>Register</title>
+  </head>
+  <body>
+      <form action="register" method="post">
+          {% csrf_token %}
+          <div class="in">
+            <h1>Register</h1>
+            <div class="user">
+              <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" name="first_name" placeholder="First Name">
+        </div><br>
+        <div class="user">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" name="last_name" placeholder="Last Name"></div><br>
+          <div class="user">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" name="username" placeholder="Username"></div><br>
+          <div class="user">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+
+          <input type="email" name="email" placeholder="email"></div><br>
+          <div class="user">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" name="password1" placeholder="Password"></div><br>
+          <div class="user">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" name="password2" placeholder="Confirm Password"></div><br>
+          <input class="sub" type="submit" value="Register"><br>
+          <h4>had an account ? <a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i></a></h4><br>
+          <br>
+          <div class="messg">
+            {% for i in messages %}
+          <h3> {{i}}</h3>
+          {% endfor %}
+        </div>
+        </div>
+      </form>
+     
+  </body>

@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>TAGG</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+
+	<div class="topnav">
+  		<a href="/"><h4>Home</h4></a>
+		  <a href="con.html"><h4>Contact us</h4></a>
+		  <p class="Heading" ><strong>E-Comerce</strong></p>
+  		<div class="topnav-right">
+				  {% if user.is_authenticated %}
+				  <a> <h4>Hello, {{user.username}} </h4></a>
+				  <a href="cartt"><h4>My Cart</h4></a>
+				<a href="accounts/logout"><h4>Logout</h4></a>
+    			
+				{% else %}	
+				<a href="accounts/register"><h4>Register</h4></a>
+				
+				<a href="accounts/login"><h4>Login</h4></a>
+				{%endif%}
+			
+
+  		</div>
+	</div>
+	<table>
+		<tbody>
+			<tr>
+				{% for dest in dests %}
+		
+			<td>
+				<div>
+			<a href={% if user.is_authenticated %}" {% url 'image' dest.id %}" {% else %} "accounts/register" {% endif %}><img class="imgg" src="{{ dest.img.url }}"></a>
+			<li>{{ dest.name }}</li>
+				</div>
+		</td>
+		{% endfor %}
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+		
+		
+		
+		

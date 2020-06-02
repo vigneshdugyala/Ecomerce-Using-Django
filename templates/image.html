@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>shopping</title>
+    <link rel="stylesheet" href="{% static 'imagestyle.css' %}">
+  </head>
+  <body>
+    <div class="topnav">
+        <a href="/"><h4>Home</h4></a>
+        <a href="con.html"><h4>Contact us</h4></a>
+        <p class="Heading" ><strong>E-Comerce</strong></p>
+        <div class="topnav-right">
+                {% if user.is_authenticated %}
+                <a> <h4>Hello, {{user.username}} </h4></a>
+                <a href="cartt"><h4>My Cart</h4></a>
+              <a href="accounts/logout"><h4>Logout</h4></a>
+              
+              {% else %}	
+              <a href="accounts/register"><h4>Register</h4></a>
+              <a href="accounts/login"><h4>Login</h4></a>
+              {%endif%}
+          
+
+        </div>
+  </div>
+    <div class="prod">
+        <a> <img src="{{ dest.img.url}}"></a>
+    </div>
+    <div class="details">
+        <h1>{{dest.name}}</h1>
+        <h4>Price : {{dest.price}}/-</h4>
+        <p>{{ dest.discription }}</p>
+        <ul>
+
+       <li> <h4>{{ dest.delivertime }}</h4></li>
+       <li> <h4>{{ dest.delivering }}</h4></li>
+      </ul>
+      <form method="post">
+        {% csrf_token %}
+        <input class="h1" type="submit" value="Add to cart"> <br>
+        <a href="book">Book Now</a>
+      </form>
+    </div>
+     
+  </body>
+  </html>
+  

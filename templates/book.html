@@ -1,0 +1,45 @@
+
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+    <title>My cart</title>
+    <link rel="stylesheet" href="{% static 'bookstyle.css' %}">
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="/"><h4>Home</h4></a>
+            <a href="con.html"><h4>Contact us</h4></a>
+            <div class="topnav-right">
+                    {% if user.is_authenticated %}
+                    <a> <h4>Hello, {{user.username}} </h4></a>
+    
+                  <a href="accounts/logout"><h4>Logout</h4></a>
+                  
+                  {% else %}	
+                  <a href="accounts/register"><h4>Register</h4></a>
+                  
+                  <a href="accounts/login"><h4>Login</h4></a>
+                  {%endif%}
+            </div>
+      </div>
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="in">
+          <h1>Booking details</h1>
+          <div class="user">
+        <input type="text" name="name" placeholder="Name(ordered  on this)">
+      </div><br>
+      <div class="user">
+        <input type="text" name="phno1" placeholder="Mobile number 1"></div><br>
+        <div class="user">
+        <input type="text" name="phno2" placeholder="Mobile number 2"></div><br>
+        <div class="user">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input type="email" name="email" placeholder="Email"></div><br>
+        <div class="user">
+        <input type="text" name="adr" placeholder="Address"></div><br>
+        <input class="sub" type="submit" value="Order"><br>
+      </body>
+      </html>

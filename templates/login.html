@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
+    <title>LOGIN</title>
+  </head>
+  <body>
+      <form action="login" method="post">
+        {% csrf_token %}
+        <div class="in">
+         <h1>Login</h1>
+       <div class="user">
+        <i class="fa fa-user" aria-hidden="true"></i>
+         <input type="text" name="username" placeholder="username"></div><br>
+         <br>
+        <div class="user">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" name="password" placeholder="password"></div><br>
+        <input class="sub" type="submit" value="Login">
+        <div class="messg">
+          {% for i in messages %}
+        <h3> {{i}}</h3>
+        {% endfor %}
+      </div>
+        </div>
+      </form>
+     
+  </body>

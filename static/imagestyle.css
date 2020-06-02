@@ -1,0 +1,101 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+    background-color:white;
+    margin:0px;
+
+}
+.prod{
+    width: 30%;
+   margin-top: 20px;
+    float:left;
+    
+}
+.details{
+    margin-top: 20px;
+    width: 50%;
+
+    color:black;
+    float:right;
+    
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color:#323030;
+  width:100%;
+  height:15%;
+ 
+}
+
+.topnav a{
+  float: left;
+  color: white;
+  padding: 20px 20px;
+  
+  text-decoration: none;
+  font-size: 15px;
+  transition:0.6s;
+}
+.topnav a:hover{
+  background-color:#ffa500;
+  color:white;
+}
+.topnav-right{
+  float: right;
+}
+
+i{
+  width:15px;
+  float:left;
+  color: white;
+}
+
+
+
+.Heading{
+    padding:20px;
+	position: absolute;
+	text-align:center;
+	padding-left: 45%;
+	color:whitesmoke;
+}
+.details a{
+  border: 2px solid  #666d6d;
+  background: white;
+  font-size: 20px;
+  color: #666d6d;
+  text-align: center;
+  margin-left: 40px;
+  padding-bottom: 8px;
+  padding-top:8px;
+  padding-right: 58.5px;
+  padding-left: 50px;
+  transition: 0.6s;
+  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+  
+}
+.h1{
+  border: 2px solid  #666d6d;
+  background: white;
+  font-size: 18px;
+  color: #666d6d;
+  text-align: center;
+  margin-left: 40px;
+  padding-bottom: 8px;
+  padding-top:8px;
+  padding-right: 56px;
+  padding-left: 50px;
+  transition: 0.6s;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+li {
+  color:#04f538;
+  font-size: 18px;
+}
+
