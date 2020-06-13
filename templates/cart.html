@@ -23,29 +23,28 @@
               
   
             </div>
+            
       </div>
       <center><h1>Your Carts</h1></center>
        <table>
 		<tbody>
 			<tr>
 				{% for i in l %}
-		
 			<td>
-				<div>
+				<div>     
 			<a href=" {% url 'image' i.id %}"><img class="imgg" src="{{ i.img.url }}"></a>
             <li>{{ i.name }}</li><br>
             <form method="POST">
                 {% csrf_token %}
                 <a class="bo" href="book">Book now</a><br> 
              <input class="del" type="submit" value="remove">
-            
              <input type="hidden" name="keyy" value="{{i.id }}">
             </form> 
 				</div>
 		</td>
-		{% endfor %}
+        {% endfor %}
 			</tr>
 		</tbody>
-	</table>
+    </table>
     </body>
 </html>

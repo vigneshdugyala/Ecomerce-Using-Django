@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth,User
 from django.contrib import messages
+from django.core.cache import cache
 # Create your views here.
 user=None
 def register(request):
@@ -35,7 +36,7 @@ def login(request):
         user = auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request, user)
-            request.session['username']=username
+            request.session['user_id']=user.id
             return redirect('/')
         else:
             messages.info(request,'Username or Password is incorrect !')
